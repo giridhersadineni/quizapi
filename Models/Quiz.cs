@@ -31,5 +31,10 @@ namespace WebAPI.Models
         protected virtual Topic Topic { get; set; }
         protected virtual ICollection<QuizAttempts> QuizAttempts { get; set; }
         protected virtual ICollection<Question> Questions { get; set; }
+
+        public ICollection<Question> getQuestions()
+        {
+            return this.Questions;
+        }
     }
 }

@@ -12,7 +12,7 @@ using WebAPI.Models;
 
 namespace WebAPI.Controllers
 {
-    public class QuestionController : ApiController
+    public class QuestionsController : ApiController
     {
         private DBModel db = new DBModel();
 

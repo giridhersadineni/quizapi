@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 05/28/2021 21:54:52
--- Generated from EDMX file: C:\Users\smehanaaz\Downloads\WebAPI\Models\DBModels.edmx
+-- Date Created: 05/31/2021 14:13:37
+-- Generated from EDMX file: C:\Users\girid\Desktop\TekQuiz\Models\DBModels.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -97,12 +97,12 @@ GO
 CREATE TABLE [dbo].[Questions] (
     [QnID] int IDENTITY(1,1) NOT NULL,
     [Qn] varchar(250)  NULL,
-    [ImageName] varchar(50)  NULL,
+    [ImageName] real  NULL,
     [Option1] varchar(50)  NULL,
     [Option2] varchar(50)  NULL,
     [Option3] varchar(50)  NULL,
     [Option4] varchar(50)  NULL,
-    [Answer] int  NULL,
+    [Answer] bigint  NULL,
     [topicId] bigint  NOT NULL,
     [AdminUserId] int  NOT NULL,
     [QuizID] int  NOT NULL

@@ -16,12 +16,12 @@ namespace WebAPI.Models
     {
         public int QnID { get; set; }
         public string Qn { get; set; }
-        public string ImageName { get; set; }
+        public Nullable<float> ImageName { get; set; }
         public string Option1 { get; set; }
         public string Option2 { get; set; }
         public string Option3 { get; set; }
         public string Option4 { get; set; }
-        public Nullable<int> Answer { get; set; }
+        public Nullable<long> Answer { get; set; }
         public long topicId { get; set; }
         public int AdminUserId { get; set; }
         public int QuizID { get; set; }

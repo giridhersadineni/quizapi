@@ -31,8 +31,17 @@ namespace WebAPI.Controllers
             {
                 return NotFound();
             }
-
+            
             return Ok(quiz);
+        }
+
+        [HttpGet]
+        [Route("api/quizquestions/{id}")]
+        [ResponseType(typeof(Question[]))]
+        public IHttpActionResult quizquestions(int id)
+        {
+            var data=db.Quizs.Find(id).getQuestions();
+            return Ok(data);
         }
 
         // PUT: api/Quizs/5
