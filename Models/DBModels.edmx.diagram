@@ -6,7 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="5a38fc7bda034f51b8dceb4b9423bf23" Name="Diagram1" ZoomLevel="85">
         <EntityTypeShape EntityType="QuizDBModel.Participant" Width="1.5" PointX="8.25" PointY="3.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuizDBModel.Question" Width="1.5" PointX="5.75" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuizDBModel.Question" Width="1.5" PointX="6.625" PointY="0.5" IsExpanded="true" />
         <EntityTypeShape EntityType="QuizDBModel.Quiz" Width="1.5" PointX="3.25" PointY="2" />
         <EntityTypeShape EntityType="QuizDBModel.AdminUser" Width="1.5" PointX="1.25" PointY="0.5" IsExpanded="true" />
         <EntityTypeShape EntityType="QuizDBModel.Topic" Width="1.5" PointX="1.125" PointY="5.625" IsExpanded="true" />

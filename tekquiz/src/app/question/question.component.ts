@@ -4,6 +4,7 @@ import { QuizService } from '../quiz.service';
 import { from, Observable } from 'rxjs';
 import { NumberValueAccessor } from '@angular/forms';
 import { switchMap } from 'rxjs/operators';
+
 @Component({
   selector: 'app-question',
   templateUrl: './question.component.html',
@@ -31,6 +32,7 @@ export class QuestionComponent implements OnInit {
     }
   }
   isAnswered(): boolean {
+    return false;
     return  this.service.questionAnswered(this.question.QnID);
   }
 

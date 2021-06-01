@@ -21,7 +21,7 @@ export class QuizComponent implements OnInit {
   public question;
 
   constructor(private service: QuizService, private route: ActivatedRoute, private router: Router) {
-    this.questions = this.service.getQuestions();
+    this.questions = this.service.fetchQuestions();
     this.totalanswered = this.service.getTotalAnswered();
     this.question = this.service.nextQuestion();
   }

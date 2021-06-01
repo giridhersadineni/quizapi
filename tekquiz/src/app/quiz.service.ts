@@ -17,13 +17,15 @@ export class QuizService {
 
   constructor(private http: HttpClient) {
     this.index = 0;
-    this.fetchQuestions();
     this.totalQuestions = this.questions.length;
   }
 
   // Reads Questions from API
   // GET : api/questions
 
+
+
+  
   fetchQuestions(): void {
     const url = "http://localhost:55265/api/questions";
     const q = this.http.get<any>(url);

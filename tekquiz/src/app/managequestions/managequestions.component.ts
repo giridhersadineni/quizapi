@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { QuestionService } from '../services/question.service';
 
 @Component({
   selector: 'app-managequestions',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ManagequestionsComponent implements OnInit {
 
-  constructor() { }
+  public questions : any;
+
+  constructor(private questionService:QuestionService) {
+    
+  }
 
   ngOnInit(): void {
+   this.questionService.getallquestions()
+   .subscribe((data)=>{
+    this.questions=data;
+   });
   }
+
 
 }

@@ -19,19 +19,31 @@
 
                 <h3>{{question.Qn}}</h3>
                 <img *ngIf="hasImage()" src="{{question.ImageName}}" alt="Image">
-                <p *ngFor="let option of question.Options;let i = index">
-                    <label for="question{{question.QnID}}option{{i}}">
-                        <input class="with-gap" [(ngModel)]="answerSelected" type="radio" 
-                            name="question{{question.QnID}}" value="{{i}}" id="question{{question.QnID}}option{{i}}" />
-                        <span>{{option}}</span>
-
+                <label for="question{{question.QnID}}option1">
+                    <input class="with-gap" [(ngModel)]="answerSelected" type="radio" name="question{{question.QnID}}"
+                        value="1" id="question{{question.QnID}}option1" />
+                    <span>{{question.Option1}}</span>
+                </label>
+                <label for="question{{question.QnID}}option2}}">
+                    <input class="with-gap" [(ngModel)]="answerSelected" type="radio" name="question{{question.QnID}}"
+                        value="2" id="question{{question.QnID}}option2" />
+                    <span>{{question.Option2}}</span>
+                </label>
+                <label for="question{{question.QnID}}option3}}">
+                        <input class="with-gap" [(ngModel)]="answerSelected" type="radio" name="question{{question.QnID}}"
+                            value="3" id="question{{question.QnID}}option3" />
+                        <span>{{question.Option3}}</span>
                     </label>
-                </p>
+                <label for="question{{question.QnID}}option4}}">
+                    <input class="with-gap" [(ngModel)]="answerSelected" type="radio" name="question{{question.QnID}}"
+                        value="4" id="question{{question.QnID}}option4" />
+                    <span>{{question.Option4 }}</span>
+                </label>
 
 
 
             </div>
-            
+
         </div>
     </div>
 </div>

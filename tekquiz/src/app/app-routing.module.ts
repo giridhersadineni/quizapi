@@ -33,6 +33,7 @@ const adminRoutes:Routes=[
   { path: 'admin/participants', component: ParticipantComponent },
   { path: 'admin/quiz', component:ManagequizComponent  },
   { path: 'admin/questions', component: ManagequestionsComponent },
+  { path: 'admin/addquestion', component: ManagequestionsComponent },
 ];
 
 @NgModule({

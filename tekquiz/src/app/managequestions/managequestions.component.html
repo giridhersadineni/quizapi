@@ -1,2 +1,36 @@
 <app-adminnavbar></app-adminnavbar>
+<div class="container" style="padding: 0.5em;">
+    
+    <p>
+        <a routerLink="/admin/addquestion" class="btn small green">Add Questions</a>
+    </p>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Manage</th>
+                <th>Question Id</th>
+                <th>Question Text</th>
+                <th>Option1</th>
+                <th>Option2</th>
+                <th>Option3</th>
+                <th>Option4</th>
+                <th>Answer</th>
+
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr *ngFor="let question of questions">
+                <td><a routerLink="/viewquestion/{{question.QnID}}" class="btn purple">Manage</a></td>
+                <td>{{question.QnID}}</td>
+                <td>{{question.Qn}}</td>
+                <td>{{question.Option1}}</td>
+                <td>{{question.Option2}}</td>
+                <td>{{question.Option3}}</td>
+                <td>{{question.Option4}}</td>
+                <td>{{question.Answer}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 <router-outlet></router-outlet>

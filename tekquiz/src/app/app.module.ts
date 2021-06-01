@@ -23,6 +23,14 @@ import { ParticipantComponent } from './participant/participant.component';
 import { TopicFormComponent } from './topic-form/topic-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TopicService } from './services/topic.service';
+import {MatRadioModule} from '@angular/material/radio';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { AdminQuestionsComponent } from './admin-questions/admin-questions.component';
+import { AdminTopicsComponent } from './admin-topics/admin-topics.component';
+import { AdminQuizComponent } from './admin-quiz/admin-quiz.component';
+import { QuestionService } from './services/question.service';
+import { ConfigService } from './services/config.service';
+
 
 @NgModule({
   declarations: [
@@ -41,6 +49,10 @@ import { TopicService } from './services/topic.service';
     FinishQuizComponent,
     ParticipantComponent,
     TopicFormComponent,
+    AdminDashboardComponent,
+    AdminQuestionsComponent,
+    AdminTopicsComponent,
+    AdminQuizComponent,
     
   ],
   imports: [
@@ -48,9 +60,15 @@ import { TopicService } from './services/topic.service';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatRadioModule
   ],
-  providers: [QuizService,TopicService],
+  providers: [
+    QuizService,
+    TopicService,
+    QuestionService,
+    ConfigService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
