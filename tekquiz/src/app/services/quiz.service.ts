@@ -1,7 +1,7 @@
 import { stringify } from '@angular/compiler/src/util';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Question } from './question';
+import { Question } from './../question';
 import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
@@ -22,8 +22,6 @@ export class QuizService {
 
   // Reads Questions from API
   // GET : api/questions
-
-
 
   
   fetchQuestions(): void {

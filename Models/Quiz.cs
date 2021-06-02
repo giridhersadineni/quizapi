@@ -28,7 +28,7 @@ namespace WebAPI.Models
     
         protected virtual AdminUser AdminId { get; set; }
         protected virtual ICollection<Participant> Participants { get; set; }
-        protected virtual Topic Topic { get; set; }
+        public virtual Topic Topic { private get; set; }
         protected virtual ICollection<QuizAttempts> QuizAttempts { get; set; }
         protected virtual ICollection<Question> Questions { get; set; }
 

@@ -10,15 +10,17 @@ import { QuestionService } from '../services/question.service';
 export class ManagequestionsComponent implements OnInit {
 
   public questions : any;
+  public isLoading:boolean;
 
   constructor(private questionService:QuestionService) {
-    
+    this.isLoading=true;
   }
 
   ngOnInit(): void {
    this.questionService.getallquestions()
    .subscribe((data)=>{
     this.questions=data;
+    this.isLoading=false;
    });
   }
 

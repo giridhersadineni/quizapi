@@ -1,2 +1,41 @@
 <app-adminnavbar></app-adminnavbar>
+<div class="container" style="padding: 0.5em;">
+    
+    <p>
+        <a routerLink="/admin/addquestion" class="btn small green">Create Quiz</a>
+    </p>
+    <div class="w-100">
+    
+      
+    </div>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Manage</th>
+                <th>Quiz Id</th>
+                <th>Title</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngIf="isLoading">
+                <td colspan="8" >
+                    <span class="center-align">
+                        <mat-spinner></mat-spinner><br> 
+                        Loading Quizzes ...
+                    </span>
+                </td>
+            </tr>
+           
+
+            <tr *ngFor="let quiz of quizzes">
+                <td><a routerLink="/viewquiz/{{quiz.Id}}" class="btn purple">Manage</a></td>
+                <th>{{quiz.Id}}</th>
+                <th>{{quiz.Name}}</th>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
 <router-outlet></router-outlet>

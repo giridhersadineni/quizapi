@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { QuizService } from '../quiz.service';
+import { QuizService } from '../services/quiz.service';
 import{ActivatedRoute,Router} from '@angular/router';
 import {Subscription,interval} from 'rxjs';
 import {FormsModule} from '@angular/forms';

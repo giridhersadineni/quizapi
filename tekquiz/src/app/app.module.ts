@@ -10,7 +10,7 @@ import { ResultComponent } from './result/result.component';
 import { from } from 'rxjs';
 import { LoginComponent } from './login/login.component';
 import { QuestionComponent } from './question/question.component';
-import { QuizService } from './quiz.service';
+import { QuizService } from './services/quiz.service';
 import { FormsModule } from '@angular/forms';
 import { AdminComponent } from './admin/admin.component';
 import { AdminnavbarComponent } from './adminnavbar/adminnavbar.component';
@@ -87,8 +87,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     AdminQuestionsComponent,
     AdminTopicsComponent,
     AdminQuizComponent,
-    AddQuestionFormComponent,
-    
+    AddQuestionFormComponent
   ],
   imports: [
     BrowserModule,

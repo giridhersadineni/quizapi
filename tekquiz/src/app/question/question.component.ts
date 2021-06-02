@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { QuizService } from '../quiz.service';
+import { QuizService } from '../services/quiz.service';
 import { from, Observable } from 'rxjs';
 import { NumberValueAccessor } from '@angular/forms';
 import { switchMap } from 'rxjs/operators';

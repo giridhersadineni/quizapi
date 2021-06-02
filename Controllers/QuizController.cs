@@ -22,6 +22,8 @@ namespace WebAPI.Controllers
             return db.Quizs;
         }
 
+
+
         // GET: api/Quizs/5
         [ResponseType(typeof(Quiz))]
         public IHttpActionResult GetQuiz(int id)
