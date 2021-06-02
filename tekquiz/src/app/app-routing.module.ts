@@ -11,6 +11,7 @@ import { ManagequestionsComponent } from './managequestions/managequestions.comp
 import { FinishQuizComponent } from './finish-quiz/finish-quiz.component';
 import { QuestionComponent } from './question/question.component';
 import {ParticipantComponent} from './participant/participant.component';
+import { AddQuestionFormComponent } from './add-question-form/add-question-form.component';
 const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'quiz',component:QuizComponent,
@@ -33,7 +34,7 @@ const adminRoutes:Routes=[
   { path: 'admin/participants', component: ParticipantComponent },
   { path: 'admin/quiz', component:ManagequizComponent  },
   { path: 'admin/questions', component: ManagequestionsComponent },
-  { path: 'admin/addquestion', component: ManagequestionsComponent },
+  { path: 'admin/addquestion', component: AddQuestionFormComponent },
 ];
 
 @NgModule({

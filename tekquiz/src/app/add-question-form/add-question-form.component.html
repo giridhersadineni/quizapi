@@ -1,0 +1,53 @@
+<app-adminnavbar></app-adminnavbar>
+<div class="container">
+
+            <h2> Add Question </h2>
+        
+            <form #addquestionform="ngForm" (ngSubmit)="onSubmit(addquestionform)" >
+
+                <div class="input-field">
+                    <input type="text" name="question" id="" class="form-control" placeholder="Enter Question" >
+                    <label for="question">Enter Question</label>
+                </div>
+                <div class="input-field">
+                    <input type="text" name="option1" id="" class="form-control" placeholder="Enter Option" >
+                    <label for="question">Enter Option1</label>
+                </div>
+                
+                <div class="input-field">
+                    <input type="text" name="option2" id="" class="form-control" placeholder="Enter Option" >
+                    <label for="question">Enter Option2</label>
+                </div>
+                
+                <div class="input-field">
+                    <input type="text" name="option3" id="" class="form-control" placeholder="Enter Option" >
+                    <label for="question">Enter Option3</label>
+                </div>
+                <div class="form-group">
+                    <label for="question">Enter Option4</label>
+                    <input type="text" name="option4" id="" class="form-control" placeholder="Enter Option" >
+                </div>
+                
+                <div class="input-field col s12">
+                    <select class="browser-default">
+                        <option >Select Correct Answer</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="question">URL of the Image</label>
+                    <input type="url" name="imagename" id="" class="form-control" placeholder="Image URL">
+                </div>
+                
+               <input type="submit" value="Add Question" class="btn purple">
+            </form>
+                
+
+        
+
+
+</div>
