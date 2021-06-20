@@ -61,6 +61,9 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { CreateQuizFormComponent } from './create-quiz-form/create-quiz-form.component';
+import { ManageparticipantsComponent } from './manageparticipants/manageparticipants.component';
+import { AddquizComponent } from './addquiz/addquiz.component';
 
 
 
@@ -87,7 +90,10 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     AdminQuestionsComponent,
     AdminTopicsComponent,
     AdminQuizComponent,
-    AddQuestionFormComponent
+    AddQuestionFormComponent,
+    CreateQuizFormComponent,
+    ManageparticipantsComponent,
+    AddquizComponent
   ],
   imports: [
     BrowserModule,

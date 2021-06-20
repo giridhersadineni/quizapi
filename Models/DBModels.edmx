@@ -78,8 +78,8 @@
     <Property Name="Option2" Type="varchar" Nullable="true" MaxLength="50" />
     <Property Name="Option3" Type="varchar" Nullable="true" MaxLength="50" />
     <Property Name="Option4" Type="varchar" Nullable="true" MaxLength="50" />
-    <Property Name="Answer" Type="bigint" Nullable="true" />
-    <Property Name="topicId" Type="bigint" Nullable="false" />
+    <Property Name="Answer" Type="bigint" Nullable="false" />
+    <Property Name="topicId" Type="bigint" Nullable="true" />
     <Property Name="AdminUserId" Type="int" Nullable="false" />
     <Property Name="QuizID" Type="int" Nullable="false" />
   </EntityType>
@@ -284,13 +284,13 @@
           <Property Name="Option2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Option3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Option4" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Answer" Type="Int64" />
-          <Property Name="topicId" Type="Int64" Nullable="false" />
+          <Property Name="Answer" Type="Int64" Nullable="false" />
+          <Property Name="topicId" Type="Int64" Nullable="true" />
           <Property Name="AdminUserId" Type="Int32" Nullable="false" />
           <Property Name="QuizID" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityContainer Name="DBModel" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Participants" EntityType="Self.Participant" />
+          <EntitySet Name="Participants" EntityType="QuizDBModel.Participant" />
           <EntitySet Name="Questions" EntityType="Self.Question" />
           <EntitySet Name="Quizs" EntityType="QuizDBModel.Quiz" />
           <EntitySet Name="AdminUsers" EntityType="QuizDBModel.AdminUser" />
@@ -341,7 +341,7 @@
           <NavigationProperty Name="Topic" Relationship="QuizDBModel.TopicQuiz" FromRole="Quiz" ToRole="Topic" a:GetterAccess="Protected" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Protected" />
           <Property Name="TopicId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="QuizAttempts" Relationship="QuizDBModel.QuizAttemptsQuiz" FromRole="Quiz" ToRole="QuizAttempts" a:GetterAccess="Protected" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Protected" />
-          <NavigationProperty Name="Questions" Relationship="QuizDBModel.QuizQuestion" FromRole="Quiz" ToRole="Question" a:GetterAccess="Protected" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Protected" />
+          <NavigationProperty Name="Questions" Relationship="QuizDBModel.QuizQuestion" FromRole="Quiz" ToRole="Question" a:GetterAccess="Public" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Protected" />
         </EntityType>
         <EntityType Name="AdminUser">
           <Key>

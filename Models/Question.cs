@@ -21,8 +21,8 @@ namespace WebAPI.Models
         public string Option2 { get; set; }
         public string Option3 { get; set; }
         public string Option4 { get; set; }
-        public Nullable<long> Answer { get; set; }
-        public long topicId { get; set; }
+        public long Answer { get; set; }
+        public Nullable<long> topicId { get; set; }
         public int AdminUserId { get; set; }
         public int QuizID { get; set; }
     }

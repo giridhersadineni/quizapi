@@ -21,9 +21,6 @@ namespace WebAPI.Controllers
         {
             return db.Quizs;
         }
-
-
-
         // GET: api/Quizs/5
         [ResponseType(typeof(Quiz))]
         public IHttpActionResult GetQuiz(int id)
@@ -42,7 +39,7 @@ namespace WebAPI.Controllers
         [ResponseType(typeof(Question[]))]
         public IHttpActionResult quizquestions(int id)
         {
-            var data=db.Quizs.Find(id).getQuestions();
+            var data = db.Quizs.Find(id).Questions;
             return Ok(data);
         }
 
@@ -87,8 +84,11 @@ namespace WebAPI.Controllers
         {
             if (!ModelState.IsValid)
             {
+                
                 return BadRequest(ModelState);
+                
             }
+
 
             db.Quizs.Add(quiz);
             db.SaveChanges();

@@ -28,13 +28,8 @@ namespace WebAPI.Models
     
         protected virtual AdminUser AdminId { get; set; }
         protected virtual ICollection<Participant> Participants { get; set; }
-        public virtual Topic Topic { private get; set; }
+        protected virtual Topic Topic { get; set; }
         protected virtual ICollection<QuizAttempts> QuizAttempts { get; set; }
-        protected virtual ICollection<Question> Questions { get; set; }
-
-        public ICollection<Question> getQuestions()
-        {
-            return this.Questions;
-        }
+        public virtual ICollection<Question> Questions { get; protected set; }
     }
 }

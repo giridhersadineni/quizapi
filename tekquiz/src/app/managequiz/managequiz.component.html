@@ -2,7 +2,7 @@
 <div class="container" style="padding: 0.5em;">
     
     <p>
-        <a routerLink="/admin/addquestion" class="btn small green">Create Quiz</a>
+        <a routerLink="/admin/addquiz" class="btn cyan">Create Quiz</a>
     </p>
     <div class="w-100">
     
@@ -29,7 +29,7 @@
            
 
             <tr *ngFor="let quiz of quizzes">
-                <td><a routerLink="/viewquiz/{{quiz.Id}}" class="btn purple">Manage</a></td>
+                <td><a routerLink="/viewquiz/{{quiz.Id}}" class="btn btn-success">Manage</a></td>
                 <th>{{quiz.Id}}</th>
                 <th>{{quiz.Name}}</th>
             </tr>

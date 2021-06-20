@@ -3,5 +3,5 @@ export interface Question {
     Qn: string;
     ImageName: string;
     Options: string[];
-    answer: number;
+    Answer: number;
 }

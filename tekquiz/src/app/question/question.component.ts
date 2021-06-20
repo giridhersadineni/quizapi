@@ -39,6 +39,7 @@ export class QuestionComponent implements OnInit {
   ngOnInit(): void {
     // this.questionid = parseInt(this.router.snapshot.paramMap.get('questionid'));
     // this.question = this.service.getQuestion(this.questionid);
+    this.question=this.service.nextQuestion();
   }
 
   nextQuestion(): any {

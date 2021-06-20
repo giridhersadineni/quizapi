@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Question } from './../question';
 import { Observable } from 'rxjs';
+import { ConfigService } from './config.service';
 @Injectable({
   providedIn: 'root',
 })
@@ -14,8 +15,9 @@ export class QuizService {
   public visitedQuestions = [];
   public answers = this.getAnswers();
   public totalQuestions: number;
+  
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient,private config:ConfigService) {
     this.index = 0;
     this.totalQuestions = this.questions.length;
   }
@@ -25,8 +27,8 @@ export class QuizService {
 
   
   fetchQuestions(): void {
-    const url = "http://localhost:55265/api/questions";
-    const q = this.http.get<any>(url);
+    let base_url=this.config.getBaseUrl();
+    const q = this.http.get<any>(base_url+"/api/questions");
     q.subscribe((data) => {
         this.questions = data;
         this.totalQuestions = this.questions.length;
