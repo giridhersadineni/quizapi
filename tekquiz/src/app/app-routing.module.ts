@@ -15,6 +15,7 @@ import { AddQuestionFormComponent } from './add-question-form/add-question-form.
 import { CreateQuizFormComponent } from './create-quiz-form/create-quiz-form.component';
 import { ManageparticipantsComponent } from './manageparticipants/manageparticipants.component';
 import { AddquizComponent } from './addquiz/addquiz.component';
+import { ManageUsersComponent } from './manage-users/manage-users.component';
 const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'quiz',component:QuizComponent,
@@ -28,21 +29,18 @@ const routes: Routes = [
   { path: 'finishquiz',component:FinishQuizComponent },
   { path: 'dashboard',component:UserdashboardComponent },
   { path:'quiz/<questionid>',component:QuestionComponent},
-  { path: '', redirectTo: 'dashboard' , pathMatch:'full' }
+  { path: '', redirectTo: 'login' , pathMatch:'full' }
 
 ];
 
 const adminRoutes:Routes=[
   { path: 'admin', component: AdminComponent },
-  { path: 'admin/participants', component: ParticipantComponent },
   { path: 'admin/quiz', component:ManagequizComponent  },
   { path: 'admin/questions', component: ManagequestionsComponent },
   { path: 'admin/addquestion', component: AddQuestionFormComponent },
   { path: 'admin/createquiz', component:CreateQuizFormComponent  },
-  { path: 'admin/participants', component:ManageparticipantsComponent},
-  { path: 'admin/addquiz', component:AddquizComponent},
-
-
+  { path: 'admin/users', component:ManageUsersComponent},
+  { path: 'admin/addquiz', component:AddquizComponent}
 ];
 
 @NgModule({

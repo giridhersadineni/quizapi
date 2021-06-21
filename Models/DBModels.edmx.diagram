@@ -19,6 +19,7 @@
         <AssociationConnector Association="QuizDBModel.QuizAttemptsParticipant" />
         <AssociationConnector Association="QuizDBModel.QuizAttemptsQuiz" />
         <AssociationConnector Association="QuizDBModel.QuizQuestion" />
+        <EntityTypeShape EntityType="QuizDBModel.User" Width="1.5" PointX="9.625" PointY="1.375" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

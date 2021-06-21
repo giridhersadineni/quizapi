@@ -1,0 +1,44 @@
+<app-adminnavbar></app-adminnavbar>
+
+<div class="container" style="padding: 0.5em;">
+    
+    <p>
+        <a routerLink="/register" class="btn cyan">Register New User</a>
+    </p>
+    <div class="w-100">
+    
+      
+    </div>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Manage</th>
+                <th>Name</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngIf="isLoading">
+                <td colspan="8" >
+                    <span class="center-align">
+                        <mat-spinner></mat-spinner><br> 
+                        Loading Quizzes ...
+                    </span>
+                </td>
+            </tr>
+           
+
+            <tr *ngFor="let user of users">
+                <td><a routerLink="/viewuser/{{user.Id}}" class="btn btn-success">Manage</a></td>
+                <th>{{user.name}}</th>
+                <th>{{user.email}}</th>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+
+<router-outlet></router-outlet>

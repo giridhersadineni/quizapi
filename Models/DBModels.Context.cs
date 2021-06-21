@@ -31,5 +31,6 @@ namespace WebAPI.Models
         public DbSet<AdminUser> AdminUsers { get; set; }
         public DbSet<Topic> Topics { get; set; }
         public DbSet<QuizAttempts> QuizAttempts { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }

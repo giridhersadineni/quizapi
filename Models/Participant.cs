@@ -27,6 +27,7 @@ namespace WebAPI.Models
         public Nullable<int> TimeSpent { get; set; }
         public string Password { get; set; }
         public int QuizId { get; set; }
+        public int UserId { get; set; }
     
         protected virtual ICollection<Quiz> Quizzes { get; set; }
         public virtual ICollection<QuizAttempts> QuizAttempts { get; set; }

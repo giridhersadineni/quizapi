@@ -22,6 +22,25 @@ namespace WebAPI.Controllers
 
         }
 
+        [HttpPost]
+        [Route("api/userlogin")]
+        public HttpResponseMessage UserLogin(User user)
+        {
+            var userdata = db.Users.Where ( u => u.email == user.email );
+            if (userdata.Any())
+            {
+                return this.Request.CreateResponse(HttpStatusCode.OK, userdata);
+            }
+            else
+            {
+                return this.Request.CreateResponse(HttpStatusCode.NotFound);
+            }
+
+        }
+
+
+
+
         [HttpGet]
         [Route("api/getalladmins")]
         public HttpResponseMessage getAdminDetails()

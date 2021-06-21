@@ -12,6 +12,7 @@
     <EntitySet Name="AdminUsers" EntityType="QuizDBModel.Store.AdminUsers" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Topics" EntityType="QuizDBModel.Store.Topics" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="QuizAttempts" EntityType="QuizDBModel.Store.QuizAttempts" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Users" EntityType="QuizDBModel.Store.Users" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="QuizParticipant" EntityType="QuizDBModel.Store.QuizParticipant" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="QuizAttemptsParticipant" EntityType="QuizDBModel.Store.QuizAttemptsParticipant" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="AdminUserTopic" Association="QuizDBModel.Store.AdminUserTopic">
@@ -66,6 +67,7 @@
     <Property Name="TimeSpent" Type="int" Nullable="true" />
     <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="100" />
     <Property Name="QuizId" Type="int" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Questions">
     <Key>
@@ -118,6 +120,15 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Date" Type="datetime" Nullable="true" />
     <Property Name="QuizId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="password" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="QuizParticipant">
     <Key>
@@ -272,6 +283,7 @@
           <Property Name="QuizId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Quizzes" Relationship="QuizDBModel.QuizParticipant" FromRole="Participant" ToRole="Quiz" a:GetterAccess="Protected" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Protected" />
           <NavigationProperty Name="QuizAttempts" Relationship="QuizDBModel.QuizAttemptsParticipant" FromRole="Participant" ToRole="QuizAttempts" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Question">
           <Key>
@@ -328,6 +340,7 @@
             <End Role="Quiz" EntitySet="Quizs" />
             <End Role="Question" EntitySet="Questions" />
           </AssociationSet>
+          <EntitySet Name="Users" EntityType="QuizDBModel.User" />
           </EntityContainer>
         <EntityType Name="Quiz">
           <Key>
@@ -457,6 +470,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" />
+          <Property Name="email" Type="String" Nullable="false" />
+          <Property Name="password" Type="String" Nullable="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -473,6 +495,7 @@
           <ScalarProperty Name="TimeSpent" ColumnName="TimeSpent" />
           <ScalarProperty Name="Password" ColumnName="Password" />
           <ScalarProperty Name="QuizId" ColumnName="QuizId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -530,6 +553,16 @@
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Date" ColumnName="Date" />
           <ScalarProperty Name="QuizId" ColumnName="QuizId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="IsTypeOf(QuizDBModel.User)">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

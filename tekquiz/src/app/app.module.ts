@@ -64,6 +64,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { CreateQuizFormComponent } from './create-quiz-form/create-quiz-form.component';
 import { ManageparticipantsComponent } from './manageparticipants/manageparticipants.component';
 import { AddquizComponent } from './addquiz/addquiz.component';
+import { ManageUsersComponent } from './manage-users/manage-users.component';
 
 
 
@@ -93,7 +94,8 @@ import { AddquizComponent } from './addquiz/addquiz.component';
     AddQuestionFormComponent,
     CreateQuizFormComponent,
     ManageparticipantsComponent,
-    AddquizComponent
+    AddquizComponent,
+    ManageUsersComponent
   ],
   imports: [
     BrowserModule,
